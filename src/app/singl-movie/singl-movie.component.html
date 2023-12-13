@@ -1,0 +1,34 @@
+<p>singl-movie works!</p>
+<!-- <h2>{{result.title}}</h2> -->
+
+
+ <section class="container" *ngIf="result != null;else alternat">
+  <section class="row">
+   <section class="col-md-4">
+<img [src]="'https://image.tmdb.org/t/p/w500'+ result.poster_path" alt="" 
+class="w-100 mb-2">
+   </section>
+
+   <section class="col-md-8">
+    <h2 class="">{{result.title}}</h2>
+    <!-- <p class="card-text vote bg-info">{{result.vote_average}}</p> -->
+    <p class="opacity-25 text-white">{{result.overview}}</p>
+    <p>{{result.id}}</p>
+    <p>vote count : <span>{{result.vote_count}}</span></p>
+    <p> vote average : <span>{{result. vote_average}}</span></p>
+    <p>  popularity : <span>{{result. popularity}}</span></p>
+    <p>  release date : <span>{{result.  release_date}}</span></p>
+     
+   
+
+
+
+    
+   </section>
+  </section>
+</section> 
+
+
+<ng-template #alternat>
+    <h3>not movies yet ..........</h3>
+</ng-template>

@@ -1,0 +1,174 @@
+
+<!-- <form  [formGroup]="userForm" (ngSubmit)="showFormData(userForm)"> -->
+<!-- ========================= First Name   ================ -->
+<!-- <label for="">First Name : </label>
+<input formControlName="first_name" type="text" name="" class="form-control">
+
+<div class="alert alert-danger " 
+
+  *ngIf="userForm.controls?.['first_name']?.invalid && 
+  
+  userForm.controls?.['first_name']?.touched">
+  <p *ngIf="userForm.controls?.['first_name']?.errors?.['required']">First Name is rquired</p>
+  <p *ngIf="userForm.controls?.['first_name']?.errors?.['minlength']">First Name min length must 3</p>
+  <p *ngIf="userForm.controls?.['first_name']?.errors?.['maxlength']">First Name max length must 8</p>
+</div> -->
+
+
+
+<!-- ========================= last Name   ================ -->
+<!-- <label for="last__name">last Name : </label>
+<input formControlName="last_name" type="text" name=" last_namee" class="form-control">
+<div class="alert alert-danger " 
+
+  *ngIf="userForm.controls?.[' last_namee']?.invalid && 
+  
+  userForm.controls?.['last_name']?.touched">
+  <p *ngIf="userForm.controls?.['last_name']?.errors?.['required']">last Name is rquired</p>
+  <p *ngIf="userForm.controls?.['last_name']?.errors?.['minlength']">last Name min length must 3</p>
+  <p *ngIf="userForm.controls?.['last_name']?.errors?.['maxlength']">last Name max length must 8</p>
+</div> -->
+
+
+<!-- =========================    ================ -->
+<!-- <label for="">: </label>
+<input formControlName="" type="number" name="" class="form-control">
+<div class="alert alert-danger " 
+
+  *ngIf="userForm.controls?.['']?.invalid && 
+  
+  userForm.controls?.[' last_name']?.touched">
+  <p *ngIf="userForm.controls?.['']?.errors?.['required']"> Name is rquired</p>
+  <p *ngIf="userForm.controls?.['']?.errors?.['minlength']"> Name min length must 10</p>
+  <p *ngIf="userForm.controls?.['']?.errors?.['maxlength']"> Name max length must 60</p>
+</div> -->
+
+<!-- ========================= Email  ================ -->
+<!-- <label for="email"> email: </label>
+<input formControlName="email" type="email" name="email" class="form-control">
+<div class="alert alert-danger " 
+
+  *ngIf="userForm.controls?.['email']?.invalid && 
+  
+  userForm.controls?.['email']?.touched">
+  <p *ngIf="userForm.controls?.['email']?.errors?.['required']">Email is rquired</p>
+  <p *ngIf="userForm.controls?.['email']?.errors?.['email']">Email is un format</p>
+ 
+</div> -->
+
+<!-- =========================   ================ -->
+<!-- <label for="password"> password: </label>
+<input formControlName="password" type="password" name="password" class="form-control">
+<div class="alert alert-danger " 
+
+  *ngIf="userForm.controls?.['password']?.invalid && 
+  
+  userForm.controls?.['password']?.touched">
+  <p *ngIf="userForm.controls?.['password']?.errors?.['required']">password is rquired</p>
+  <p *ngIf="userForm.controls?.['password']?.errors?.['pattern']">
+    password is must contin letter and dijit</p>
+ 
+</div>
+
+<button [disabled]="userForm.invalid && userForm.touched"
+ class="btn btn-info">submit</button>
+</form> -->
+
+<!-- ============    ========================================-->
+
+
+
+
+<!-- <h2 class="alert alert-danger my-5"  *ngIf="messError">{{messError}}<h2> -->
+  
+<section class="">
+<h2 *ngIf="messErr.length>0"class="alert alert-warning">errors :{{messErr}}</h2>
+  <form class="container w-75 py-5"  [formGroup]="userForm" (ngSubmit)="showFormData( userForm)"> 
+ <!-- =========================  Name   ================ -->
+    
+         <label for="">First Name : </label>
+    <input formControlName="name" type="text" name="" class="form-control">
+    
+    <div class="alert alert-danger " 
+    
+      *ngIf="userForm.controls?.['name']?.invalid && 
+      
+      userForm.controls?.['name']?.touched">
+      <p *ngIf="userForm.controls?.['name']?.errors?.['required']">Name is rquired</p>
+      <p *ngIf="userForm.controls?.['name']?.errors?.['minlength']"> Name min length must 3</p>
+      <p *ngIf="userForm.controls?.['name']?.errors?.['maxlength']">
+         Name max length must 8</p>
+    
+    
+    </div>
+    
+ <!-- ========================= phone   ================ -->
+ <label for="">phone : </label>
+ <input formControlName="phone" typ="number" name="" class="form-control">
+ <div class="alert alert-danger " 
+ 
+   *ngIf="userForm.controls?.['phone']?.invalid && 
+   
+   userForm.controls?.['phone']?.touched">
+   <p *ngIf="userForm.controls?.['phone']?.errors?.['required']"> phone is rquired</p>
+   <p *ngIf="userForm.controls?.['phone']?.errors?.['pattern']"> 
+     phone errpr</p>
+ 
+ </div>
+<!-- ========================= Email  ================ -->
+<label for="email"> email: </label>
+<input formControlName="email" type="email" name="email" class="form-control">
+<div class="alert alert-danger " 
+
+  *ngIf="userForm.controls?.['email']?.invalid && 
+  
+  userForm.controls?.['email']?.touched">
+  <p *ngIf="userForm.controls?.['email']?.errors?.['required']">Email is rquired</p>
+  <p *ngIf="userForm.controls?.['email']?.errors?.['email']">Email is un format</p>
+ 
+</div>
+ <!-- ========================= Password  ================ -->
+ <label for="password"> password: </label>
+ <input formControlName="password" type="text" name="password" class="form-control">
+ <div class="alert alert-danger " 
+ 
+   *ngIf="userForm.controls?.['password']?.invalid && 
+   
+   userForm.controls?.['password']?.touched">
+   <p *ngIf="userForm.controls?.['password']?.errors?.['required']">password is rquired</p>
+   <p *ngIf="userForm.controls?.['password']?.errors?.['minlength']">
+     password is must min lengtht 6</p>
+     <p *ngIf="userForm.controls?.['password']?.errors?.['maxlength']">
+      password is must max lengtht 13</p>
+ </div>
+
+<!-- =========================re- Password  ================ -->
+<label for="rePassword"> rePassword: </label>
+<input formControlName="rePassword" type="password" name="rePassword" class="form-control">
+<div class="alert alert-danger " 
+
+  *ngIf="userForm.controls?.['rePassword']?.invalid && 
+  
+  userForm.controls?.['password']?.touched">
+  <p *ngIf="userForm.controls?.['rePassword']?.errors?.['required']">password is rquired</p>
+  <p *ngIf="userForm.controls?.['rePassword']?.errors?.['minlength']">
+    password is must min lengtht 6</p>
+    <p *ngIf="userForm.controls?.['rePassword']?.errors?.['maxlength']">
+     password is must max lengtht 13</p>
+</div>
+
+<p *ngIf="userForm.errors!=null" >
+    password not matched
+</p>
+
+
+
+ <button *ngIf="!loading"
+  class="" [disabled]="userForm.invalid "
+  class="btn btn-info my-3 px-5 ms-auto  d-block  text-white">submit</button>
+ 
+
+<button  *ngIf="loading"
+class="btn btn-warning  text-white my-5">Hii</button>
+</form>
+</section>

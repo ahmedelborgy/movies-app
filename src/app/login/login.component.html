@@ -1,0 +1,41 @@
+
+<section class="is_form my-5 py-5 ">
+
+
+<form  [formGroup]=" loginForm" (ngSubmit)="singin(loginForm)">
+  <div class="form-group py-2">
+    <label for="email">Email</label>
+    <input type="email" formControlName="email" class="form-control" name="email" id="email">
+    <div class="alert alert-danger"
+    *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+ <p *ngIf="loginForm.controls.email?.errors?.['required']">Email is required</p>
+  <p *ngIf="loginForm.controls.email?.errors?.['email']">Email un formate</p>
+   <p></p>
+  </div>
+  </div>
+  
+  <div class="form-group py-2">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" class="form-control" name="password" 
+    id="password">
+
+ <div class="alert alert-danger"
+ *ngIf="loginForm.controls.password.invalid && loginForm.controls.email.touched" >
+<p *ngIf="loginForm.controls.password?.errors?.['required']">Password is required</p>
+<p *ngIf="loginForm.controls.password?.errors?.['minlength']">password min length must 6 dijit/p>
+<p *ngIf="loginForm.controls.password?.errors?.['maxlength']">password max length must 16 dijit</p>
+    </div>
+  </div>
+
+<button 
+[disabled]="loginForm.invalid&&loginForm.touched"
+  class="btn btn-info my-3 ms-auto  d-block px-5 text-white  ">submit</button>
+
+<button *ngIf="is_load" class="btn btn-warning text-white">loading</button>
+
+<h3 class="text-danger">{{loginMess}}</h3>
+
+
+</form>
+ 
+</section>

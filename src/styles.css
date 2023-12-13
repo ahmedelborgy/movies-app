@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+/* 
+sass
+$fontFamily:'Montserrat Alternates', 
+$bgColor:#131722;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+$secondFontColor:#949cb0;
+ */
+
+  @import 
+  url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    background-color: #131722;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    
+
+}
+
+.vote{
+    position: absolute ;
+    top: -5px;
+    right:-5px;
+    padding:  10px;
+    opacity: .7;
+}
+.logOut{
+  background-color: rgba(17, 15, 15, 0.9);
+  position: absolute;
+  left:0% ;
+  top: 0%;
+  bottom: 0;
+  right: 0;
+  z-index: 999999999999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* .loading{
+  background-color: rgba(189, 96, 96, 0.5);
+  position: absolute;
+
+  z-index: 20;
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

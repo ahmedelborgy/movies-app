@@ -1,0 +1,106 @@
+<!-- ========== Start pagination Section ========== -->
+
+
+<section class="pagination-mov py-3 my-4">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled" (click)="getPrivesPag()">
+        <a class="page-link" tabindex="-1">
+          Previous
+        </a>
+      </li>
+      <li class="page-item " (click)="getPag($event)">
+        <a class="page-link pagintion-link" id="n1">{{(1+x)*n}}</a>
+      </li>
+      <li class="page-item" (click)="getPag($event)">
+        <a class="page-link pagintion-link" id="n2">{{(2+x)*n}}</a>
+      </li>
+      <li class="page-item" (click)="getPag($event)">
+        <a class="page-link pagintion-link" id="n3">{{(3+x)*n}}</a>
+      </li>
+
+      <li class="page-item" (click)="getPag($event)">
+        <a class="page-link pagintion-link" id="n1">{{(4+x)*n}}</a>
+      </li>
+      <li class="page-item" (click)="getPag($event)">
+        <a class="page-link pagintion-link" id="n2">{{(5+x)*n}}</a>
+      </li>
+      <li class="page-item" (click)="getPag($event)">
+        <a class="page-link pagintion-link" id="n3">{{(6+x)*n}}</a>
+      </li>
+
+      <li class="page-item" (click)="getNextPag()">
+        <a class="page-link">Next</a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+
+<!-- ========== End pagination Section ========== -->
+
+<section>
+  <section class=" container ">
+    <div class="bg-danger alert-danger m-auto head w-50 text-center my-3">{{resultPagem}}</div>
+    <section class="row g-4   ">
+      <div class="  h-25    col-md-12 col-lg-12 col-xl-4">
+        <h1 class="fw-bold">
+          Tranding<br>
+          movies <br>
+          watch now <br>
+          <p class="py-3 fs-4 fw-lighter">Most watch movies by days </p>
+        </h1>
+
+        <div>
+          <input type="text" class="form-control" [(ngModel)]="serchWord">
+          <h2>{{serchWord}}</h2>
+        </div>
+      </div>
+
+
+      <section class="col-md-12 col-lg-6 col-xl-2" 
+      *ngFor="let elem of moviesResult|serch:serchWord;let i=index;">
+      <div class="card border-2 ">
+      <img [src]=" 'https://image.tmdb.org/t/p/w500'+ elem.poster_path" alt="" [routerLink]="['/singleMovie',elem.id,elem.title]" class="w-100 ">
+          <div class="card-body bg-secondary text-white text-center position-relative  ">
+            <h5 class="card-title h6  p-2"> {{elem.title |slice:0:8}}..</h5>
+            <!-- <h5 class="card-title h6  p-2"> {{elem.title }}</h5> -->
+           
+            <!-- <p>{{i|recommend:'index '}}</p> -->
+            <p class="index translate-middle-y ">{{i|recommend:''}}</p>
+            
+            
+<!--            
+            
+            <p class="card-text vote bg-info">{{elem.vote_average}}</p> -->
+            <!-- <p class="card-text vote bg-info">{{elem.vote_average}}</p> -->
+           
+            <p>{{elem.id |currency }}</p> 
+          </div>
+          
+            
+          <p class="card-text vote bg-info">{{elem.vote_average}}</p>
+        </div>
+
+
+      </section>
+
+    </section>
+  </section>
+</section>
+
+
+
+
+<!-- ---------------------- -->
+
+
+
+
+
+
+
+
+
+
+
